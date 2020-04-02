@@ -7,6 +7,7 @@ public class User
     //constants
     public static String NAMEPATTERN="^[A-Z][a-zA-Z]{2,}$";
     public static String EMAILPATTERN="^[a-zA-Z0-9]{3,}+[@][a-zA-Z0-9]{3,}+[.][a-zA-Z]{3,}$";
+    public static String MOBILEPATTERN="^[0-9]{2}[0-9]{10}";
     //Pattern checking method
     public static void patternChecking(String inputPattern,String validPattern)
     {
@@ -25,6 +26,7 @@ public class User
         String firstName="";
         String lastName="";
         String email="";
+        String mobileNo="";
         System.out.println("Welcome to user registration");
         Scanner sc=new Scanner(System.in);
 
@@ -42,5 +44,10 @@ public class User
         System.out.println("Enter email address:");
         email=sc.next();
         patternChecking(email,EMAILPATTERN);
+
+        //checking mobile no is valid or not
+        System.out.println("Enter Mobile No:");
+        mobileNo=sc.next();
+        patternChecking(mobileNo,MOBILEPATTERN);
     }
 }
