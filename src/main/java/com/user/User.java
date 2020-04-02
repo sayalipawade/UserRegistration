@@ -8,7 +8,7 @@ public class User
     public static String NAMEPATTERN="^[A-Z][a-zA-Z]{2,}$";
     public static String EMAILPATTERN="^[a-zA-Z0-9]{3,}+[@][a-zA-Z0-9]{3,}+[.][a-zA-Z]{3,}$";
     public static String MOBILEPATTERN="^[0-9]{2}[0-9]{10}";
-    public static String PASSWORDPATTERN="[a-zA-Z]{8,}$";
+    public static String PASSWORDPATTERN="^([a-zA-Z0-9]*[A-Z]+[a-zA-Z0-9]*)$";
     //Pattern checking method
     public static void patternChecking(String inputPattern,String validPattern)
     {
@@ -52,7 +52,7 @@ public class User
         mobileNo=sc.next();
         patternChecking(mobileNo,MOBILEPATTERN);
 
-        //password should contains minimum 8 characters
+        //Password should contain at least one uppercase character
         System.out.println("Enter Password");
         password=sc.next();
         patternChecking(password,PASSWORDPATTERN);
