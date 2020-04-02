@@ -52,7 +52,7 @@ public class User
         mobileNo=sc.next();
         patternChecking(mobileNo,MOBILEPATTERN);
 
-        //Password should contain at least one uppercase character
+        //Password should contain at least one numeric value
         System.out.println("Enter Password");
         password=sc.next();
         patternChecking(password,PASSWORDPATTERN);
