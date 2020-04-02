@@ -8,7 +8,7 @@ public class User
     public static String NAMEPATTERN="^[A-Z][a-zA-Z]{2,}$";
     public static String EMAILPATTERN="^[a-zA-Z0-9]{3,}+[@][a-zA-Z0-9]{3,}+[.][a-zA-Z]{3,}$";
     public static String MOBILEPATTERN="^[0-9]{2}[0-9]{10}";
-    public static String PASSWORDPATTERN="^([A-Za-z0-9]*[0-9]+[A-Za-z0-9]*[A-Z])|([A-Za-z0-9]*[A-Z]+[A-Za-z0-9]*[0-9])$";
+    public static String PASSWORDPATTERN="^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[0-9a-z])(?=.*[A-Z])(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8,}$";
     //Pattern checking method
     public static void patternChecking(String inputPattern,String validPattern)
     {
