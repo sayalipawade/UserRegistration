@@ -22,11 +22,18 @@ public class User
     {
         //variables
         String firstName="";
+        String lastName="";
         System.out.println("Welcome to user registration");
         Scanner sc=new Scanner(System.in);
+
         //Checking First name is valid or not
         System.out.println("Enter first name:");
         firstName=sc.next();
         patternChecking(firstName,NAMEPATTERN);
+
+        //Checking last name is valid or not
+        System.out.println("Enter last name:");
+        lastName=sc.next();
+        patternChecking(lastName,NAMEPATTERN);
     }
 }
