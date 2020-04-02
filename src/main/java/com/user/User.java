@@ -8,6 +8,7 @@ public class User
     public static String NAMEPATTERN="^[A-Z][a-zA-Z]{2,}$";
     public static String EMAILPATTERN="^[a-zA-Z0-9]{3,}+[@][a-zA-Z0-9]{3,}+[.][a-zA-Z]{3,}$";
     public static String MOBILEPATTERN="^[0-9]{2}[0-9]{10}";
+    public static String PASSWORDPATTERN="[a-zA-Z]{8,}$";
     //Pattern checking method
     public static void patternChecking(String inputPattern,String validPattern)
     {
@@ -27,6 +28,7 @@ public class User
         String lastName="";
         String email="";
         String mobileNo="";
+        String password="";
         System.out.println("Welcome to user registration");
         Scanner sc=new Scanner(System.in);
 
@@ -49,5 +51,11 @@ public class User
         System.out.println("Enter Mobile No:");
         mobileNo=sc.next();
         patternChecking(mobileNo,MOBILEPATTERN);
+
+        //password should contains minimum 8 characters
+        System.out.println("Enter Password");
+        password=sc.next();
+        patternChecking(password,PASSWORDPATTERN);
+
     }
 }
