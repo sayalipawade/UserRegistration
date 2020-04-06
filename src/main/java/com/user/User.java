@@ -1,61 +1,55 @@
 package com.user;
-
 import java.util.Scanner;
-
-public class User
+public class User implements PatternMatch
 {
     //constants
     public static String NAMEPATTERN="^[A-Z][a-zA-Z]{2,}$";
-    public static String EMAILPATTERN="^[a-zA-Z0-9[-+]]{1,}([.]?[a-zA-Z0-9]{1,})?[@]{1}[a-zA-Z0-9]{1,}[.]{1}[a-z]{2,3}([.]?[a-z]{2,3})?$";
+    public static String EMAILPATTERN="^[a-zA-Z0-9]{1,}([.]?[a-zA-Z0-9]{1,})?[@]{1}[a-zA-Z0-9]{1,}[.]{1}[a-z]{2,3}([.]?[a-z]{2,3})?$";
     public static String MOBILEPATTERN="^[0-9]{2}[0-9]{10}";
     public static String PASSWORDPATTERN="^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[0-9a-z])(?=.*[A-Z])(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8,}$";
-    //Pattern checking method
-    public static void patternChecking(String inputPattern,String validPattern)
+
+    //variables
+    public static String firstName="";
+    public static String lastName="";
+    public static String email="";
+    public static String mobile="";
+    public static String password="";
+
+    @Override
+    public void patternChecking(String inputPattern, String validPattern)     //method to checks the pattern is valid or not
     {
         if(inputPattern.matches(validPattern))
         {
-            System.out.println("Valid pattern");
+            System.out.println("Valid Pattern");
         }
         else
         {
             System.out.println("Not valid pattern");
         }
     }
-    public static void main(String[] args)
+    public static void main(String args[])                     //main method
     {
-        //variables
-        String firstName="";
-        String lastName="";
-        String email="";
-        String mobileNo="";
-        String password="";
-        System.out.println("Welcome to user registration");
+        PatternMatch p1=new User();
         Scanner sc=new Scanner(System.in);
 
-        //Checking First name is valid or not
-        System.out.println("Enter first name:");
+        System.out.println("Enter First name:");               //checking first name is valid or not
         firstName=sc.next();
-        patternChecking(firstName,NAMEPATTERN);
+        p1.patternChecking(firstName,NAMEPATTERN);
 
-        //Checking last name is valid or not
-        System.out.println("Enter last name:");
+        System.out.println("Enter last name:");                //checking last name is valid or not
         lastName=sc.next();
-        patternChecking(lastName,NAMEPATTERN);
+        p1.patternChecking(lastName,NAMEPATTERN);
 
-        //Checking email is valid or not
-        System.out.println("Enter email address:");
+        System.out.println("Enter Email:");                    //checking email is valid or not
         email=sc.next();
-        patternChecking(email,EMAILPATTERN);
+        p1.patternChecking(email,EMAILPATTERN);
 
-        //checking mobile no is valid or not
-        System.out.println("Enter Mobile No:");
-        mobileNo=sc.next();
-        patternChecking(mobileNo,MOBILEPATTERN);
+        System.out.println("Enter Mobile no:");                 //checking mobile no is valid or not
+        mobile=sc.next();
+        p1.patternChecking(mobile,MOBILEPATTERN);
 
-        //Checking password pattern
-        System.out.println("Enter Password");
+        System.out.println("Enter password:");                  //checking password is valid or not
         password=sc.next();
-        patternChecking(password,PASSWORDPATTERN);
-
+        p1.patternChecking(password,PASSWORDPATTERN);
     }
 }
